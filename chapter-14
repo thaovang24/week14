@@ -1,1 +1,45 @@
+Chapter 14
 
+Thao Vang
+
+CSCI2461 Linux Course
+
+Compiling a program from source code:
+
+The very first time I started using Linux is this course that introduces, from an environment change from your typical GUI to a Command Terminal with nothing on it. This was very difficult from using as a start up OS for unfamiliar environment.
+
+From here I will reference some of the installed instructions from the application developer since they are the creator for this application.
+
+I will compile the chat application Prosody with step by step and minor changes. We will need to download Prosody from the web using the command wget, you will need to open a terminal and login as root or sudo in order to get it working properly, it all depends on how you setup your environment.
+
+1. Create a directory called Prosody using the command **mkdir Prosody**
+
+2. Change directory to Prosody using **cd Prosody**
+
+3. Used command wget and download using **wget** **<https://prosody.im/downloads/source/prosody-0.10.0.tar.gz>**
+
+4. This is a tar file and you will need to extract it using command **tar xzfv prosody-0.10.0.tar.gz**
+
+5. Change directory to the new extracted folder using **cd prosody-0.10.0**
+
+6. Used command **ls** to list the files, what you are looking for is the **README** file and follow instructions, very important.
+
+7. The next step is to download it's dependencies using this command **apt-get build-dep prosody**, this will install programing language lua
+
+8. After dependencies/Lua are installed, we will begin to configure by using the command **./configure**
+
+9. Since we are installing on a debian/Ubuntu Linux flavor we will use the preset settings with the option ostype by issuing the command **./configure ---ostype=PRESET**
+
+10. Once configuration process completes, the next step is to input the command **make**
+
+11. In the terminal type in **make** and wait for the command prompt to return
+
+12. This complete the stages of download, configure the application for your specific systems and build the application and is ready for deployment.
+
+**13. **The last step is the command **./prosody** this will run prosody
+
+After installing prosody, there are additional steps to configure your prosody configuration file in /etc/prosody/prosody.cfg.lua for it to work properly using your favorite text editor in order to modify the configuration file.
+
+After installing this application directly from source and compiling it. I feel that it is harder than it needs to be for first time user for Linux unlike MS Windows. In Windows the application is just usually a single executable file .exe; and contained and just double click to install right away and skipping most of the steps unlike Linux OS.
+
+I think the reason why it is so hard for home users to transition over to Linux, this is one of the major cons out there, since the average home users like to point and clicks. Linux compile process is complex to install on different flavors of Linux if there are no presets for that specific Linux flavors. The best way to reduce these installs in Linux by using install package tools such as apt or apt-get to bypass all the manual installs.
